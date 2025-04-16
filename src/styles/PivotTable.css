@@ -1,0 +1,325 @@
+.pivot-table-container {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.5rem;
+}
+
+.pivot-table-container.dark {
+  background-color: #1f2937;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.pivot-table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.pivot-table-container.dark .pivot-table-header {
+  border-bottom-color: #374151;
+}
+
+.pivot-table-header h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  color: #111827;
+}
+
+.pivot-table-container.dark .pivot-table-header h3 {
+  color: #f9fafb;
+}
+
+.pivot-table-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.pivot-action {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #4b5563;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pivot-table-container.dark .pivot-action {
+  border-color: #374151;
+  background-color: #1f2937;
+  color: #d1d5db;
+}
+
+.pivot-action:hover {
+  background-color: #f9fafb;
+  border-color: #d1d5db;
+  color: #4f46e5;
+  transform: translateY(-1px);
+}
+
+.pivot-table-container.dark .pivot-action:hover {
+  background-color: #374151;
+  border-color: #4b5563;
+  color: #818cf8;
+}
+
+/* Nuevo estilo para el selector de campos simple */
+.simple-field-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+}
+
+.pivot-table-container.dark .simple-field-selector {
+  border-bottom-color: #374151;
+  background-color: #111827;
+}
+
+.field-selector-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.field-selector-item label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4b5563;
+  min-width: 80px;
+}
+
+.pivot-table-container.dark .field-selector-item label {
+  color: #d1d5db;
+}
+
+.field-selector-item select {
+  padding: 0.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #111827;
+  font-size: 0.875rem;
+  min-width: 150px;
+}
+
+.pivot-table-container.dark .field-selector-item select {
+  border-color: #374151;
+  background-color: #1f2937;
+  color: #f9fafb;
+}
+
+.pivot-table-wrapper {
+  overflow-x: auto;
+  padding: 1rem 1.5rem;
+}
+
+.pivot-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.pivot-table th,
+.pivot-table td {
+  padding: 0.75rem;
+  text-align: right;
+  border: 1px solid #e5e7eb;
+}
+
+.pivot-table-container.dark .pivot-table th,
+.pivot-table-container.dark .pivot-table td {
+  border-color: #374151;
+}
+
+.pivot-table .corner-header {
+  background-color: #f3f4f6;
+  color: #4b5563;
+  font-weight: 600;
+  text-align: center;
+}
+
+.pivot-table-container.dark .pivot-table .corner-header {
+  background-color: #1f2937;
+  color: #d1d5db;
+}
+
+.pivot-table .column-header {
+  background-color: #f3f4f6;
+  color: #4b5563;
+  font-weight: 500;
+}
+
+.pivot-table-container.dark .pivot-table .column-header {
+  background-color: #1f2937;
+  color: #d1d5db;
+}
+
+.pivot-table .row-header {
+  background-color: #f3f4f6;
+  color: #4b5563;
+  font-weight: 500;
+  text-align: left;
+}
+
+.pivot-table-container.dark .pivot-table .row-header {
+  background-color: #1f2937;
+  color: #d1d5db;
+}
+
+.pivot-table .total-header {
+  background-color: #e5e7eb;
+  color: #111827;
+  font-weight: 600;
+}
+
+.pivot-table-container.dark .pivot-table .total-header {
+  background-color: #374151;
+  color: #f9fafb;
+}
+
+.pivot-table .data-cell {
+  color: #111827;
+}
+
+.pivot-table-container.dark .pivot-table .data-cell {
+  color: #f9fafb;
+}
+
+.pivot-table .row-total,
+.pivot-table .column-total {
+  background-color: #f3f4f6;
+  color: #111827;
+  font-weight: 500;
+}
+
+.pivot-table-container.dark .pivot-table .row-total,
+.pivot-table-container.dark .pivot-table .column-total {
+  background-color: #1f2937;
+  color: #f9fafb;
+}
+
+.pivot-table .total-label {
+  background-color: #e5e7eb;
+  color: #111827;
+  font-weight: 600;
+  text-align: left;
+}
+
+.pivot-table-container.dark .pivot-table .total-label {
+  background-color: #374151;
+  color: #f9fafb;
+}
+
+.pivot-table .grand-total {
+  background-color: #e5e7eb;
+  color: #111827;
+  font-weight: 600;
+}
+
+.pivot-table-container.dark .pivot-table .grand-total {
+  background-color: #374151;
+  color: #f9fafb;
+}
+
+.pivot-table tr:hover .data-cell {
+  background-color: #f9fafb;
+}
+
+.pivot-table-container.dark .pivot-table tr:hover .data-cell {
+  background-color: #262f3d;
+}
+
+.pivot-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+}
+
+.pivot-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(79, 70, 229, 0.1);
+  border-radius: 50%;
+  border-top-color: #4f46e5;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+.pivot-table-container.dark .pivot-spinner {
+  border-color: rgba(99, 102, 241, 0.1);
+  border-top-color: #6366f1;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.pivot-loading p {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.pivot-table-container.dark .pivot-loading p {
+  color: #9ca3af;
+}
+
+.pivot-table-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  color: #6b7280;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.pivot-table-container.dark .pivot-table-message {
+  color: #9ca3af;
+}
+
+@media (max-width: 768px) {
+  .simple-field-selector {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .field-selector-item {
+    width: 100%;
+  }
+
+  .field-selector-item select {
+    flex: 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .pivot-action span {
+    display: none;
+  }
+
+  .pivot-action {
+    padding: 0.5rem;
+  }
+}

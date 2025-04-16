@@ -1,0 +1,328 @@
+.date-picker-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.date-picker-modal {
+  background-color: #ffffff;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.date-picker-modal.dark {
+  background-color: #1f2937;
+  color: #f9fafb;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.date-picker-header {
+  padding: 1.25rem;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.date-picker-modal.dark .date-picker-header {
+  border-bottom-color: #374151;
+}
+
+.date-picker-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.date-picker-modal.dark .date-picker-header h2 {
+  color: #f9fafb;
+}
+
+.close-button {
+  background: transparent;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.date-picker-modal.dark .close-button {
+  color: #9ca3af;
+}
+
+.close-button:hover {
+  background-color: #f3f4f6;
+  color: #111827;
+}
+
+.date-picker-modal.dark .close-button:hover {
+  background-color: #374151;
+  color: #f9fafb;
+}
+
+.date-picker-content {
+  padding: 1.5rem;
+}
+
+.date-inputs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.date-input-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.date-input-group label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4b5563;
+}
+
+.date-picker-modal.dark .date-input-group label {
+  color: #d1d5db;
+}
+
+.date-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.date-input-container svg {
+  position: absolute;
+  left: 0.75rem;
+  color: #6b7280;
+  pointer-events: none;
+  transition: color 0.2s;
+}
+
+.date-picker-modal.dark .date-input-container svg {
+  color: #9ca3af;
+}
+
+.date-input-container input {
+  width: 100%;
+  padding: 0.5rem 0.75rem 0.5rem 2.25rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  color: #111827;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.date-picker-modal.dark .date-input-container input {
+  border-color: #374151;
+  background-color: #1f2937;
+  color: #f9fafb;
+}
+
+.date-input-container input:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.1);
+}
+
+.date-picker-modal.dark .date-input-container input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+.date-display {
+  font-size: 0.875rem;
+  color: #4f46e5;
+  margin-top: 0.25rem;
+}
+
+.date-picker-modal.dark .date-display {
+  color: #818cf8;
+}
+
+.date-picker-error {
+  color: #ef4444;
+  font-size: 0.875rem;
+  margin: 0.5rem 0 1.5rem;
+  padding: 0.75rem 1rem;
+  background-color: rgba(239, 68, 68, 0.05);
+  border-radius: 6px;
+  border-left: 3px solid #ef4444;
+}
+
+.date-picker-modal.dark .date-picker-error {
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+.date-picker-presets {
+  margin-top: 1.5rem;
+}
+
+.date-picker-presets h3 {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin: 0 0 0.75rem 0;
+  color: #4b5563;
+}
+
+.date-picker-modal.dark .date-picker-presets h3 {
+  color: #d1d5db;
+}
+
+.preset-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.preset-buttons button {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #4b5563;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.date-picker-modal.dark .preset-buttons button {
+  border-color: #374151;
+  background-color: #1f2937;
+  color: #d1d5db;
+}
+
+.preset-buttons button:hover {
+  background-color: #f9fafb;
+  border-color: #4f46e5;
+  color: #4f46e5;
+  transform: translateY(-1px);
+}
+
+.date-picker-modal.dark .preset-buttons button:hover {
+  background-color: #374151;
+  border-color: #818cf8;
+  color: #818cf8;
+}
+
+.date-picker-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.date-picker-modal.dark .date-picker-footer {
+  border-top-color: #374151;
+}
+
+.cancel-button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #e5e7eb;
+  background-color: white;
+  color: #374151;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.date-picker-modal.dark .cancel-button {
+  border-color: #374151;
+  background-color: #1f2937;
+  color: #e5e7eb;
+}
+
+.cancel-button:hover {
+  background-color: #f9fafb;
+  border-color: #d1d5db;
+}
+
+.date-picker-modal.dark .cancel-button:hover {
+  background-color: #374151;
+  border-color: #4b5563;
+}
+
+.apply-button {
+  padding: 0.5rem 1rem;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 2px 4px rgba(79, 70, 229, 0.2);
+}
+
+.apply-button:hover {
+  background-color: #4338ca;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(79, 70, 229, 0.3);
+}
+
+.apply-button:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(79, 70, 229, 0.2);
+}
+
+@media (max-width: 640px) {
+  .date-inputs {
+    flex-direction: column;
+  }
+
+  .date-picker-footer {
+    flex-direction: column-reverse;
+  }
+
+  .date-picker-footer button {
+    width: 100%;
+  }
+
+  .preset-buttons {
+    flex-direction: column;
+  }
+
+  .preset-buttons button {
+    width: 100%;
+  }
+}

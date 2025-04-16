@@ -1,0 +1,331 @@
+/* Estilos principales de la aplicación */
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f9fafb;
+  color: #111827;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dashboard-container.dark-mode {
+  background-color: #111827;
+  color: #f9fafb;
+}
+
+.dashboard-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.dashboard-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.dashboard-header {
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.dashboard-header.dark {
+  background-color: #1f2937;
+  border-bottom-color: #374151;
+}
+
+.header-title h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  color: #111827;
+}
+
+.dashboard-header.dark .header-title h1 {
+  color: #f9fafb;
+}
+
+.header-title p {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0.25rem 0 0 0;
+}
+
+.dashboard-header.dark .header-title p {
+  color: #9ca3af;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-container input {
+  padding: 0.5rem 0.75rem 0.5rem 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background-color: #f9fafb;
+  color: #111827;
+  font-size: 0.875rem;
+  width: 200px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.dashboard-header.dark .search-container input {
+  border-color: #374151;
+  background-color: #1f2937;
+  color: #f9fafb;
+}
+
+.dropdown-container {
+  position: relative;
+}
+
+.dropdown-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #4b5563;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.dashboard-header.dark .dropdown-button {
+  border-color: #374151;
+  background-color: #1f2937;
+  color: #d1d5db;
+}
+
+.dropdown-button:hover:not(:disabled) {
+  background-color: #f9fafb;
+  border-color: #4f46e5;
+  color: #4f46e5;
+}
+
+.dashboard-header.dark .dropdown-button:hover:not(:disabled) {
+  background-color: #374151;
+  border-color: #818cf8;
+  color: #818cf8;
+}
+
+.dropdown-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.date-range-button {
+  min-width: 200px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  width: 200px;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  z-index: 10;
+  overflow: hidden;
+}
+
+.dashboard-header.dark .dropdown-menu {
+  background-color: #1f2937;
+  border-color: #374151;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-menu button {
+  width: 100%;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border: none;
+  background-color: transparent;
+  color: #4b5563;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.dashboard-header.dark .dropdown-menu button {
+  color: #d1d5db;
+}
+
+.dropdown-menu button:hover {
+  background-color: #f3f4f6;
+  color: #4f46e5;
+}
+
+.dashboard-header.dark .dropdown-menu button:hover {
+  background-color: #374151;
+  color: #818cf8;
+}
+
+.dropdown-menu button.active {
+  background-color: #f3f4f6;
+  color: #4f46e5;
+  font-weight: 500;
+}
+
+.dashboard-header.dark .dropdown-menu button.active {
+  background-color: #374151;
+  color: #818cf8;
+}
+
+.icon-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #4b5563;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.dashboard-header.dark .icon-button {
+  border-color: #374151;
+  background-color: #1f2937;
+  color: #d1d5db;
+}
+
+.icon-button:hover:not(:disabled) {
+  background-color: #f9fafb;
+  border-color: #4f46e5;
+  color: #4f46e5;
+}
+
+.dashboard-header.dark .icon-button:hover:not(:disabled) {
+  background-color: #374151;
+  border-color: #818cf8;
+  color: #818cf8;
+}
+
+.icon-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.icon-button.theme-toggle {
+  padding: 0.5rem;
+}
+
+.import-prompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  max-width: 600px;
+}
+
+.dark-mode .import-prompt {
+  background-color: #1f2937;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.import-prompt h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.import-prompt p {
+  margin-bottom: 2rem;
+  color: #6b7280;
+}
+
+.dark-mode .import-prompt p {
+  color: #9ca3af;
+}
+
+.import-button {
+  padding: 0.75rem 1.5rem;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.import-button:hover {
+  background-color: #4338ca;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .header-actions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .search-container {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .search-container input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .metric-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .metric-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .icon-button span,
+  .dropdown-button span {
+    display: none;
+  }
+
+  .icon-button,
+  .dropdown-button {
+    padding: 0.5rem;
+  }
+
+  .date-range-button {
+    min-width: unset;
+  }
+}
